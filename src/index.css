@@ -1,0 +1,222 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Romantic pastel palette */
+    --background: 30 40% 97%;
+    --foreground: 20 25% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 25% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 25% 20%;
+
+    /* Soft rose pink */
+    --primary: 350 65% 75%;
+    --primary-foreground: 20 25% 15%;
+
+    /* Lavender */
+    --secondary: 280 35% 88%;
+    --secondary-foreground: 280 30% 30%;
+
+    /* Cream/beige */
+    --muted: 35 40% 94%;
+    --muted-foreground: 20 15% 45%;
+
+    /* Soft peach accent */
+    --accent: 15 70% 85%;
+    --accent-foreground: 15 40% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 350 30% 90%;
+    --input: 350 30% 90%;
+    --ring: 350 65% 75%;
+
+    --radius: 1rem;
+
+    /* Custom romantic colors */
+    --blush: 350 70% 85%;
+    --lavender: 280 40% 88%;
+    --cream: 40 50% 96%;
+    --rose: 350 55% 65%;
+    --peach: 20 80% 90%;
+
+    /* Gradients */
+    --gradient-romantic: linear-gradient(135deg, hsl(var(--cream)) 0%, hsl(var(--blush)) 50%, hsl(var(--lavender)) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -2px hsl(var(--primary) / 0.15);
+    --shadow-card: 0 8px 30px -4px hsl(var(--primary) / 0.12);
+    --shadow-hover: 0 12px 40px -6px hsl(var(--primary) / 0.2);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 20 20% 10%;
+    --foreground: 30 30% 95%;
+
+    --card: 20 20% 12%;
+    --card-foreground: 30 30% 95%;
+
+    --popover: 20 20% 12%;
+    --popover-foreground: 30 30% 95%;
+
+    --primary: 350 55% 70%;
+    --primary-foreground: 20 20% 10%;
+
+    --secondary: 280 25% 25%;
+    --secondary-foreground: 280 30% 90%;
+
+    --muted: 20 15% 18%;
+    --muted-foreground: 30 20% 65%;
+
+    --accent: 15 50% 25%;
+    --accent-foreground: 15 60% 90%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 20 15% 20%;
+    --input: 20 15% 20%;
+    --ring: 350 55% 70%;
+
+    --blush: 350 40% 35%;
+    --lavender: 280 25% 30%;
+    --cream: 40 20% 15%;
+    --rose: 350 45% 50%;
+    --peach: 20 40% 30%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+/* Fade-in animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 3s ease-in-out infinite;
+}
+
+/* Animation delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
+.delay-800 { animation-delay: 0.8s; }
+
+/* Romantic gradient background */
+.bg-romantic-gradient {
+  background: var(--gradient-romantic);
+}
+
+.bg-soft-gradient {
+  background: var(--gradient-soft);
+}
+
+/* Card hover effect */
+.card-romantic {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-card);
+}
+
+.card-romantic:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Decorative hearts */
+.heart-decoration::before {
+  content: '♡';
+  position: absolute;
+  font-size: 1.5rem;
+  color: hsl(var(--primary));
+  opacity: 0.5;
+}
